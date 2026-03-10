@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "LyrOn",
+  "version": "1.0.0",
+  "description": "LyrOn is an extension to enjoy music lyrics wherever you are.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://open.spotify.com/*"],
+      "js": ["src/content.ts"]
+    }
+  ],
+  "permissions": ["activeTab"]
+}
