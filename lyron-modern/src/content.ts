@@ -1,1 +1,0 @@
-console.log("¡LyrOn está activo en esta página! 🎵");

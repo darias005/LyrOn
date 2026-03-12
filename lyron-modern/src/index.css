@@ -1,3 +1,34 @@
-@tailwind base;
+/* Se deshabilita `base` para no resetear los estilos globales de YouTube */
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
+
+/* Como estamos en un Shadow DOM, ya no necesitamos IDs protectores */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+/* Custom Scrollbar Styles for the lyrics container - HIDING VISUAL SCROLLBAR */
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

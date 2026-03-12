@@ -3,14 +3,28 @@
   "name": "LyrOn",
   "version": "1.0.0",
   "description": "LyrOn is an extension to enjoy music lyrics wherever you are.",
-  "action": {
-    "default_popup": "index.html"
+  "action": {},
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
   },
   "content_scripts": [
     {
-      "matches": ["*://*.youtube.com/*", "*://open.spotify.com/*"],
-      "js": ["src/content.ts"]
+      "matches": [
+        "*://*.youtube.com/*", 
+        "*://*.spotify.com/*" 
+      ],
+      "js": ["src/content.tsx"]
     }
   ],
-  "permissions": ["activeTab"]
+  "permissions": [
+    "activeTab", 
+    "scripting", 
+    "storage" 
+  ],
+  "host_permissions": [
+    "https://solr.sscdn.co/*",
+    "https://www.letras.com/*",
+    "https://lrclib.net/*"
+  ]
 }
